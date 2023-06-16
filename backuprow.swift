@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlateRow: View {
-    var plate: Plate
+    var plate: (plate: Double, count: Int)
     
     var body: some View {
         HStack {
@@ -17,7 +17,7 @@ struct PlateRow: View {
                 .frame(width: 30, height: 30)
                 .padding(EdgeInsets(top: 3.009, leading: 0, bottom: 3.009, trailing: 5))
             
-            Text("\(plateString(for: plate.plateWeight)) lb x \(plate.count)")
+            Text("\(plateString(for: plate.plate)) lb x \(plate.count)")
             
             Spacer()
         }
@@ -31,12 +31,11 @@ struct PlateRow: View {
     }
 }
 
-
-
 struct PlateRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PlateRow(plate: Plate(plateWeight: 45.0, count: 3))
+            PlateRow(plate: (plate: 45, count: 5))
+            PlateRow(plate: (plate: 45, count: 5))
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }

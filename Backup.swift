@@ -21,7 +21,7 @@ struct ContentView: View {
         }
     }
     
-    @State private var plates = [Plate]()
+    @State private var plates = [(plate: Double, count: Int)]()
     
     var body: some View {
         NavigationView {
@@ -73,8 +73,11 @@ struct ContentView: View {
                 
                 Section {
                     if targetWeight != 0 {
+//                        ForEach(plates, id: \.self) { plate in
+//                            PlateRow(plate: plate)
+//                        }
                         ForEach(plates, id: \.self) { plate in
-                            PlateRow(plate: plate)
+                            PlateRow(plate: plate.plate, count: plate.count)
                         }
                     }
                 } header: {
@@ -85,30 +88,43 @@ struct ContentView: View {
             .navigationTitle("Plate Calculator")
         }
     }
-
-    func calculatePlates(barWeight: Int, targetWeight: Int) -> [Plate] {
+    
+//    func calculatePlates(barWeight: Int, targetWeight: Int) -> [Double] {
+//        let plateWeights = [45, 25, 10, 5, 2.5]
+//        var remainingWeight = Double(targetWeight - barWeight)
+//        var plates: [Double] = []
+//
+//        for weight in plateWeights {
+//            let plateCount = Int(remainingWeight / (Double(weight) * 2))
+//            let totalPlateWeight = Double(plateCount) * Double(weight) * 2
+//            remainingWeight -= totalPlateWeight
+//
+//            for _ in 0..<plateCount {
+//                plates.append(Double(weight))
+//            }
+//        }
+//
+//        return plates
+//    }
+    
+    func calculatePlates(barWeight: Int, targetWeight: Int) -> [(plate: Double, count: Int)] {
         let plateWeights = [45, 25, 10, 5, 2.5]
         var remainingWeight = Double(targetWeight - barWeight)
-        var plates: [Plate] = []
-        var inserted = false
+        var plates: [(plate: Double, count: Int)] = []
         
         for weight in plateWeights {
-            inserted = false
             let plateCount = Int(remainingWeight / (Double(weight) * 2))
             let totalPlateWeight = Double(plateCount) * Double(weight) * 2
             remainingWeight -= totalPlateWeight
             
             for _ in 0..<plateCount {
-                if inserted == false {
-                    let plate = Plate(plateWeight: Double(weight), count: plateCount)
-                    plates.append(plate)
-                    inserted = true
-                }
+                plates.append((Double(weight), 1))
             }
         }
         
         return plates
     }
+
 }
 
 
