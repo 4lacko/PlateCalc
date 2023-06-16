@@ -11,6 +11,7 @@
 		3B4841A52A3BF84A0057306B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4841A42A3BF84A0057306B /* ContentView.swift */; };
 		3B4841A72A3BF84B0057306B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B4841A62A3BF84B0057306B /* Assets.xcassets */; };
 		3B4841AA2A3BF84B0057306B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B4841A92A3BF84B0057306B /* Preview Assets.xcassets */; };
+		3B4841B12A3C05690057306B /* PlateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4841B02A3C05690057306B /* PlateRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		3B4841A42A3BF84A0057306B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B4841A62A3BF84B0057306B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B4841A92A3BF84B0057306B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3B4841B02A3C05690057306B /* PlateRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				3B4841A22A3BF84A0057306B /* PlateCalcApp.swift */,
 				3B4841A42A3BF84A0057306B /* ContentView.swift */,
+				3B4841B02A3C05690057306B /* PlateRow.swift */,
 				3B4841A62A3BF84B0057306B /* Assets.xcassets */,
 				3B4841A82A3BF84B0057306B /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B4841B12A3C05690057306B /* PlateRow.swift in Sources */,
 				3B4841A52A3BF84A0057306B /* ContentView.swift in Sources */,
 				3B4841A32A3BF84A0057306B /* PlateCalcApp.swift in Sources */,
 			);
